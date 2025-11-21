@@ -24,7 +24,7 @@ dotenv.config();
 try {
   // @ts-ignore - Node 18+ supports setDefaultResultOrder
   dns.setDefaultResultOrder?.('ipv6first');
-} catch {}
+} catch { }
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -32,7 +32,7 @@ const POSTGRES_URL = process.env.POSTGRES_URL || process.env.DATABASE_URL || 'po
 
 
 // Middleware
-const allowedOrigins = process.env.FRONTEND_URL 
+const allowedOrigins = process.env.FRONTEND_URL
   ? process.env.FRONTEND_URL.split(',')
   : ['http://localhost:5173', 'http://localhost:8080'];
 
@@ -129,7 +129,12 @@ async function start() {
   }
 }
 
-start();
+// Only start the server if running directly (not imported as a module)
+// This prevents Vercel from trying to start the server on import
+if (import.meta.url === `file://${process.argv[1]}`) {
+  start();
+}
+
 
 export default app;
 
