@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    /* Food delivery vibrant orange */
+    --primary: 15 85% 60%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 15 85% 55%;
+
+    /* Deep indigo for contrast */
+    --secondary: 250 70% 50%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    /* Warm amber accent */
+    --accent: 45 95% 60%;
+    --accent-foreground: 222.2 84% 4.9%;
+
+    /* Success green for order status */
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 15 85% 60%;
+
+    --radius: 0.75rem;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(15 85% 60%), hsl(45 95% 60%));
+    --gradient-card: linear-gradient(180deg, transparent, hsl(0 0% 98%));
+    
+    /* Shadows */
+    --shadow-card: 0 2px 8px hsl(15 85% 60% / 0.1);
+    --shadow-card-hover: 0 8px 24px hsl(15 85% 60% / 0.2);
+
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 230 20% 12%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 230 20% 12%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 15 85% 60%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 15 85% 55%;
+
+    --secondary: 250 70% 50%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 45 95% 60%;
+    --accent-foreground: 222.2 84% 4.9%;
+
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 217.2 32.6% 20%;
+    --input: 217.2 32.6% 20%;
+    --ring: 15 85% 60%;
+
+    --shadow-card: 0 2px 8px hsl(0 0% 0% / 0.3);
+    --shadow-card-hover: 0 8px 24px hsl(0 0% 0% / 0.5);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
